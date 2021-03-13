@@ -7,6 +7,10 @@
     <title>99-Bank</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Fontawesome -->
+  
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
 </head>
 <body>
     <div id="login-area">
@@ -31,7 +35,7 @@
             <div class="col-md-4" >
                 <div class="withdraw status">
                     <h5>Withdraw</h5>
-                    <h2>$00</h2>
+                    <h2>$ <span id="currentWithdraw">00</span></h2>
                 </div>
             </div>
             <div class="col-md-4">
@@ -63,6 +67,19 @@
 
         
     </div>
+
+     <!-- Footer -->
+
+  <footer id="footer">
+    
+    <i class="social-icon fab fa-facebook"></i>
+    <i class="social-icon fab fa-twitter"></i>
+    <i class="social-icon fab fa-instagram"></i>
+    <i class="social-icon fas fa-envelope"></i>
+
+    <p>© Copyright 2021 ROMEL_99</p>
+    
+  </footer>
     <script>
         // Login button event handler
         const loginBtn = document.getElementById("logIn");
@@ -90,6 +107,12 @@
         const withdrawBtn = document.getElementById("addWithdraw");
         withdrawBtn.addEventListener("click", function () {
            const withdrawNumber = getInputNumber("withdrawAmount");
+
+           updateSpanText("currentWithdraw", withdrawNumber);
+
+           updateSpanText("currentBalance", -1 * withdrawNumber);
+
+           document.getElementById("withdrawAmount").value = "";
             
         })
 

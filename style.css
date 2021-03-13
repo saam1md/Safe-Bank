@@ -33,3 +33,13 @@ body{
     background-color: orange;
 }
 
+#footer{
+    padding: 7% 15%;
+    text-align: center;
+    color: rgb(123, 71, 255);
+  }
+
+  .social-icon{
+    margin: 20px 10px;
+  }
+
